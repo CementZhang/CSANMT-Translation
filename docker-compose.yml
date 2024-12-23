@@ -1,0 +1,25 @@
+
+services:
+  translation:
+    container_name: translation
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    command: uvicorn main:app --host 0.0.0.0 --port 11000 --workers 1 --log-level info
+    restart: always
+    network_mode: "bridge"
+    environment:
+      - APP_ENV=${APP_ENV}  # 引用主机环境变量 APP_ENV
+    volumes:
+      - /data/share/models/modelscope:/root/.cache/modelscope
+      - /data/share/var/logs/translation/logs:/app/logs
+    ports:
+      - "11000:11000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['1']
+            capabilities: [gpu]
+
