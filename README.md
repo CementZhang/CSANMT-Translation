@@ -14,7 +14,7 @@ CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CS
 <a name="安装教程"></a>
 ## 安装教程
 - 部署最简单的方式是使用docker-compose部署, 支持了GPU, CPU
-  - MPS, 其他Mac/Win平台开发调试,Clone本项目后直接requirments.txt安装依赖
+- MPS, 其他Mac/Win平台开发调试,Clone本项目后直接requirments.txt安装依赖
 
 ### Docker部署
   - 1、在本地主机上安装最新版本的 Docker,自带了Compose版本。
@@ -45,7 +45,7 @@ CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CS
     pip install --default-timeout=600 -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt
     ```
 ### 更换模型
-- 目前预置为modelscope的两个模型.路径在tanslation.translation.ModelEnum.model_path; 自行跟换就行
+- 目前预置为modelscope的两个模型.路径在tanslation.translation.ModelEnum.model_path; 自行更换即可
 
     ```bash
        class ModelEnum(Enum):
