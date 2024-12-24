@@ -1,6 +1,9 @@
 
-CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CSANMT**系列(modelscope平台)的模型翻译项目; 目前支持中文到英文的翻译，英文到中文的翻译,其他模型可以到[Modelscope](https://modelscope.cn/models)下载即可. 也可以作为**fastapi**入门项目使用. 对性能有要求可以看章节性能部分参数;
-本项目基于pyhton的fastapi框架开发. 代码简洁,可以直接部署作为翻译的原子(微服务)服务使用投入到生成. 目前已经做了热加载、API封装,开箱即用.
+CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CSANMT**系列(Modelscope平台)的模型翻译项目; 目前支持中文到英文的翻译，英文到中文的翻译,其他模型可以到[Modelscope](https://modelscope.cn/models)下载即可. 也可以作为**FastApi**入门项目使用. 对性能有要求可以看章节性能部分参数;
+本项目基于pyhton的fastapi框架开发. 代码简洁,可以直接部署作为翻译的原子(微服务)服务使用投入到生成. 特色:
+- 模型预加载 - 减少首次推理时间
+- 超长文本推理 - 内置切分、断句逻辑
+- API封装 - 基于FastApi开箱即用,调用方式参考[API调用章节]( #API调用)
 
 <div align="center">  
 <h4>
@@ -27,13 +30,13 @@ CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CS
       ```
     
   - 5、镜像 && 核心的组件
-    - 镜像:tensorflow/tensorflow:2.18.0-gpu,需要其他镜像可以到dockerhub上自行更新/更换;如果更更新/更换镜像注意涉及相应pip依赖保持更新.以下为镜像里核心组件的版本号,你也可以自行到官方镜像具体查询.
+    - 镜像:tensorflow/tensorflow:2.18.0-gpu,需要其他镜像可以到dockerhub上自行更新/更换;如果更新/更换镜像注意涉及相应pip依赖保持更新.以下为镜像里核心组件的版本号,你也可以自行到官方镜像具体查询.
       - CUDA_VERSION=12.3.0
       - PYTHON_VERSION=python3.11
       - TENSORFLOW_PACKAGE=tensorflow==2.18.0
   
     - python包核心依赖:
-      - torch_tensorrt==2.2.0 (linux的GPU必须依赖; 这个在modelscope平台里没有具体说明核心)
+      - torch_tensorrt==2.2.0 (linux的GPU必须依赖; 这个在modelscope平台里没有具体说明的核心)
       - modelscope==1.21.0
       - datasets==2.18.0
       - sacremoses==0.1.1
