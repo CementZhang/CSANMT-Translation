@@ -1,5 +1,5 @@
 
-CSANMT-Translation 服务为基于**TensorFlow**框架**CSANMT**系列(modelscope平台)的模型翻译项目; 目前支持中文到英文的翻译，英文到中文的翻译,其他模型可以到[Modelscope](https://modelscope.cn/models)下载即可. 也可以作为**fastapi**入门项目使用. 对性能有要求可以看章节性能部分参数;
+CSANMT-Translation为翻译的模型服务; 项目基于**TensorFlow**框架**CSANMT**系列(modelscope平台)的模型翻译项目; 目前支持中文到英文的翻译，英文到中文的翻译,其他模型可以到[Modelscope](https://modelscope.cn/models)下载即可. 也可以作为**fastapi**入门项目使用. 对性能有要求可以看章节性能部分参数;
 本项目基于fashapi框架开发. 代码简洁,可以直接部署作为翻译的原子(微服务)服务使用投入到生成. 目前已经做了热加载、API封装,开箱即用.
 
 <div align="center">  
